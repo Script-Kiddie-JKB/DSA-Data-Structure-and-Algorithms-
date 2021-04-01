@@ -16,4 +16,4 @@ int main()
 	int check=LinearSearch(a,0,n,numbSearch);
 	if(check==-1) cout<<numbSearch<<" is not found!!";
 	else cout<<numbSearch<<" is found at index "<<check;
-}
+} 
