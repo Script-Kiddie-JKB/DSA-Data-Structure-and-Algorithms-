@@ -1,2 +1,5 @@
-# DSA-Data-Structure-and-Algorithms-
-Data Structure and Algorithms 
+Give this Project a Star ⭐
+
+If you liked working on this Repo, share this repo as much as you can and star this project to help as many people in opensource as you can.
+
+🎉 🎊 😃 Happy Contributing 😃 🎊 🎉
