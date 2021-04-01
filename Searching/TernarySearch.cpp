@@ -25,7 +25,7 @@ int main()
 {
 	int a[]={1,3,5,7,8,9,14,99};
     //int a[]={};
-	int n=sizeof(a)/sizeof(a[0]);
+	int n=sizeof(a)/sizeof(a[0]); 
 	int find=99;
 	int index=TernarySearch(a,0,n,find);
 	if(index==-1)
