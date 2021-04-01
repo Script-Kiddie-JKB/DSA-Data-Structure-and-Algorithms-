@@ -37,4 +37,4 @@ int main()
 	cout<<"Element not found!";
 	else
 	cout<<"Element found at index "<<index;
-}
+} 
