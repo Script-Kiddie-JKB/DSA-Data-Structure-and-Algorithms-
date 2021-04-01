@@ -1,4 +1,4 @@
-Give this Project a Star ⭐
+### Give this Project a Star :star:
 
 If you liked working on this Repo, share this repo as much as you can and star this project to help as many people in opensource as you can.
 
