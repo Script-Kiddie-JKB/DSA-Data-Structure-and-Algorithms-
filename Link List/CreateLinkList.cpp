@@ -18,6 +18,7 @@ void display();
 void search(); 
 void reverse(); 
 void count();
+
 int main ()  
 {  
     int choice =0;  
