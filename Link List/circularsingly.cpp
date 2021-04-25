@@ -16,15 +16,17 @@ void last_delete();
 void random_delete();  
 void display();  
 void search();  
+void reverse();
+void count();
 int main ()  
 {  
     int choice =0;  
-    while(choice != 7)   
+    while(choice != 9)   
     {  
         cout<<"\n*********Main Menu*********\n";  
         cout<<"\nChoose one option from the following list ...\n";  
         cout<<"\n===============================================\n";  
-        cout<<"\n1.Insert in begining\n2.Insert at last\n3.Delete from Beginning\n4.Delete from last\n5.Search for an element\n6.Show\n7.Exit\n";  
+        cout<<"\n1.Insert in begining\n2.Insert at last\n3.Delete from Beginning\n4.Delete from last\n5.Search for an element\n6.Show\n7.Reverse\n8.Count\n9.Exit\n10.ClearScreen";  
         cout<<"\nEnter your choice?\n";         
         cin>>choice;  
         switch(choice)  
@@ -47,11 +49,19 @@ int main ()
             case 6:  
             display();        
             break;  
-            case 7:  
-            exit(0);  
-            break;  
+            case 7:
+			reverse();
+			break;
+			case 8:  
+            count();  
+            break;
+			case 9: 
+            exit(0);
+			case 10:
+			system("cls");
+			break; 
             default:  
-            cout<<("Please enter valid choice..");  
+            cout<<"\nPlease enter valid choice..";  
         }  
     }  
 }  
@@ -187,7 +197,7 @@ void search()
     }  
     else  
     {   
-        cout<<"\nEnter item which you want to search?\n";   
+        cout<<"\nEnter item which you want to search ?\n";   
         cin>>item;  
         if(head ->data == item)  
         {  
@@ -219,7 +229,7 @@ void search()
     }     
           
 }  
-  
+
 void display()  
 {  
     struct node *ptr;  
@@ -240,5 +250,39 @@ void display()
         }  
         cout<<"\t" << ptr -> data;  
     }  
-              
-}  
+}
+
+void reverse()
+ {
+    struct node *temp = NULL;
+    struct node *prev = NULL;
+    struct node *current = head;
+    while(current != NULL) 
+	{
+        temp = current->next;
+        current->next = prev;
+        prev = current;
+        current = temp;
+    }
+    head = prev;
+}
+
+void count()
+{
+  
+    struct node* temp = head;
+ 
+    int count=0;
+ 
+    while(temp != NULL){
+ 
+       temp = temp->next;
+        count++;
+ 
+    }
+ 
+ 
+    cout<<"\n Total no. of nodes is : "<<count;
+ 
+}
+ 
