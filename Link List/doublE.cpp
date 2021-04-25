@@ -16,6 +16,8 @@ void deletion_last();
 void deletion_specified();  
 void display();  
 void search();  
+void reverse();
+void count();
 int main ()  
 {  
 int choice =0;  
@@ -24,7 +26,7 @@ int choice =0;
         cout<<"\n\n********* Main Menu *********";  
         cout<<"\nChoose one option from the following list ...\n";  
        	cout<<"\n===============================================\n";  
-        cout<<"\n1.Insert in begining\n2.Insert at last\n3.Insert at any random location\n4.Delete from Beginning\n5.Delete from last\n6.Delete node after specified location\n7.Search for an element\n8.Show\n9.Exit\n10.For Clear Screen";  
+        cout<<"\n1.Insert in begining\n2.Insert at last\n3.Insert at any random location\n4.Delete from Beginning\n5.Delete from last\n6.Delete node after specified location\n7.Search for an element\n8.Show\n9.Reverse\n10.Count\n11.Exit\n12.For Clear Screen";  
         cout<<"\n\nEnter your choice: ";         
         cin>>choice;   
         switch(choice)  
@@ -52,13 +54,19 @@ int choice =0;
             break;  
             case 8:  
             display();  
-            break;  
-            case 9:  
+            break;
+	    case 9:
+	    reverse();
+	    break;
+	    case 10:
+	    count();  
+	    break;
+            case 11:  
             exit(0);  
             break;
-            case 10:
-			system("cls");
-			break;   
+            case 12:
+	    system("cls");
+	    break;   
             default:  
             cout<<"Please enter valid choice..";  
         }  
@@ -292,3 +300,37 @@ void search()
     }     
           
 }  
+void reverse()
+ {
+    struct node *temp = NULL;
+    struct node *prev = NULL;
+    struct node *current = head;
+    while(current != NULL) 
+	{
+        temp = current->next;
+        current->next = prev;
+        prev = current;
+        current = temp;
+    }
+    head = prev;
+}
+
+void count()
+{
+  
+    struct node* temp = head;
+ 
+    int count=0;
+ 
+    while(temp != NULL){
+ 
+       temp = temp->next;
+        count++;
+ 
+    }
+ 
+ 
+    cout<<"\n Total no. of nodes is : "<<count;
+ 
+}
+ 
